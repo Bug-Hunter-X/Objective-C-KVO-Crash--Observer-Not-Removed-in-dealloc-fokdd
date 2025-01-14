@@ -1,0 +1,1 @@
+This bug occurs when using KVO (Key-Value Observing) in Objective-C.  The observer is not removed properly when the observed object is deallocated, leading to a crash. This is because the observer might try to access the deallocated object causing a EXC_BAD_ACCESS error.  Here's an example where the `removeObserver` is not called in `dealloc`:
